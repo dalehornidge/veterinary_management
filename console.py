@@ -30,3 +30,7 @@ pet2 = Pet("Ted", "18/04/2020", "cat", "Ted is shy", owner2.id, vet2.id)
 pet_repository.save(pet2)
 
 
+print(owner_repository.select_all())
+print(pet_repository.select_all())
+print(vet_repository.select_all())
+

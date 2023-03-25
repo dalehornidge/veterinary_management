@@ -4,12 +4,6 @@ from models.owner import Owner
 from models.vet import Vet
 
 
-# save ///
-# show all
-# show by id
-# delete all ////
-# delete by id ////
-
 def delete_all():
     sql = "DELETE FROM pets"
     run_sql(sql)

@@ -1,11 +1,6 @@
 from db.run_sql import run_sql
 from models.vet import Vet
 
-# save ///
-# show all
-# show by id
-# delete all ////
-# delete by id ////
 
 def delete_all():
     sql = "DELETE FROM vets"

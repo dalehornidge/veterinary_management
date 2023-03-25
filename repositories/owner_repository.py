@@ -35,3 +35,13 @@ def select_all():
         owner = Owner(result["name"], result["address"], result["phone"], result["owner_notes"], result["id"])
         owners.append(owner)
     return owners
+
+def select(id):
+    owner = None
+    sql = "SELECT * FROM owners WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if results:
+        result = results[0]
+        owner = Owner(result["name"], result["address"], result["phone"], result["owner_notes"], result["id"])
+    return owner

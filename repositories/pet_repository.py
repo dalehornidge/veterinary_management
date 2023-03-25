@@ -36,3 +36,16 @@ def select_all():
         pet = Pet(result["name"], result["dob"], result["type"], result["treatment_notes"], result["owner_id"], result["vet_id"], result["id"])
         pets.append(pet)
     return pets
+
+
+def select(id):
+    pet = None
+    sql = "SELECT * FROM pets WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if results:
+        result = results[0]
+        pet = Pet(result["name"], result["dob"], result["type"], result["treatment_notes"], result["owner_id"], result["vet_id"], result["id"])
+    return pet
+
+

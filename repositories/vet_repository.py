@@ -34,6 +34,13 @@ def select_all():
         vets.append(vet)
     return vets
 
-
-
+def select(id):
+    vet = None
+    sql = "SELECT * FROM vets WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if results:
+        result = results[0]
+        vet = Vet(result["name"], result["email"], result["phone"], result["id"])
+    return vet
 

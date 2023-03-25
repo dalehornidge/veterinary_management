@@ -18,4 +18,6 @@ def save(owner):
     owner.id = id
     return owner
 
-
+def delete_all():
+    sql = "DELETE FROM owners"
+    run_sql(sql)

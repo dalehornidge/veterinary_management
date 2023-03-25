@@ -16,4 +16,6 @@ def save(vet):
     vet.id = id
     return vet
     
-
+def delete_all():
+    sql = "DELETE FROM vets"
+    run_sql(sql)

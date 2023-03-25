@@ -12,11 +12,13 @@ from models.vet import Vet
 
 
 def save(pet):
-    sql = "INSERT INTO vets (name, email, phone) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
-    values = [pet.name, pet.dob, pet.type, pet.treatment_notes, pet.owner, pet.vet]
+    sql = "INSERT INTO pets (name, dob, type, treatment_notes, owner_id, vet_id) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
+    values = [pet.name, pet.dob, pet.type, pet.treatment_notes, pet.owner_id, pet.vet_id]
     results = run_sql(sql, values)
     id = results[0]['id']
     pet.id = id
     return pet
     
-
+def delete_all():
+    sql = "DELETE FROM pets"
+    run_sql(sql)

@@ -8,3 +8,16 @@ import repositories.pet_repository as pet_repository
 
 vets_blueprint = Blueprint("vets", __name__)
 
+@vets_blueprint.route("/vets")
+def vets():
+    vets = vet_repository.select_all()
+    return render_template("index.html", vets=vets)
+    
+@vets_blueprint.route("/vets/<id>")
+def show_vets(id):
+    vets = vet_repository.select(id)
+    return render_template("vets/show.html", vets=vets)
+
+
+
+

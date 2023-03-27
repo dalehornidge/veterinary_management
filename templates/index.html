@@ -20,11 +20,18 @@
             <li>Owners</li>
         </ul>
     </div>
-    <p>Hello World</p>
-<<img src="static/img/temp_dog.jpg" alt="image of dog" width=500px>
-<label for vets="">Select a vet</label>
+<div class="flex-container">
+<img class="flex-child-1" src="static/img/index-dog.jpg" alt="image of dog" width=500px>
+<div class = "flex-child-2">
+<section class="choose-vet">Select a vet</section>
+ {% for vet in vets %}
+ 
+<section id="vet-name">
+    <p>{{ vet.name }}</p>
+</section>
 
-
-</form>
+ {% endfor %}
+</div>
+</div>
 </body>
 </html>

@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-    background: linear-gradient(to bottom, #C6DCE4, #d2e1e4 50%);
+    background: #DAEAF1;
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -23,6 +23,63 @@ body {
 
 li {
     list-style: none;
-    padding: 0 5px;
-    
+    padding: 0 5px;   
 }
+
+.flex-container {
+    display: flex;
+    /* flex: 1; */
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.flex-child-1 {
+    flex: 1;
+    margin-right: 20px;
+    min-width: 0;
+    max-width: 50%;
+}
+
+.flex-child-2 {
+    flex: 1;
+    margin-left: 20px;
+    margin-top: 100px;
+    min-width: 0;
+    max-width: 50%;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+/* #select-option {
+    background: #A0C3D2;
+    min-width: 200%;
+    border-radius: 25px;
+    color: white;
+    padding: 5%;
+} */
+
+#vet-name, .vet-namec {
+    background: #EAC7C7;
+    padding: 10px;
+    border-radius: 25px;
+    color: white;
+    margin: 10px ;
+    width: 50%;
+}
+
+.choose-vet {
+    background: #A0C3D2;
+    padding: 10px;
+    border-radius: 25px;
+    color: white;
+    margin: 10px ;
+    width: 50%;
+}
+/* .vet-namec { 
+    background: #EAC7C7;
+    padding: 10px;
+    border-radius: 25px;
+    color: white;
+    margin: 10px ;
+    width: 50%;
+} */

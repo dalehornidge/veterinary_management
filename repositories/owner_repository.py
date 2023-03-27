@@ -21,14 +21,27 @@ def save(owner):
     return owner
 
 def select_all():
-    owners = []
-    sql = "SELECT * FROM owners"
+    vets = []
+    sql = "SELECT * FROM vets"
     results = run_sql(sql)
 
     for result in results:
-        owner = Owner(result["name"], result["address"], result["phone"], result["owner_notes"], result["id"])
-        owners.append(owner)
-    return owners
+        vet = Vet(result["name"], result["email"], result["phone"], result["id"])
+        vets.append(vet)
+    return vets
+
+
+
+
+# def select_all():
+#     owners = []
+#     sql = "SELECT * FROM owners"
+#     results = run_sql(sql)
+
+#     for result in results:
+#         owner = Owner(result["name"], result["address"], result["phone"], result["owner_notes"], result["id"])
+#         owners.append(owner)
+#     return owners
 
 def select(id):
     owner = None

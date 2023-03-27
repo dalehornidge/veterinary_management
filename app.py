@@ -12,7 +12,7 @@ app.register_blueprint(pets_blueprint)
 
 @app.route("/")
 def main():
-    return render_template('index.html')
+    return render_template('/vets/index.html')
 
 if __name__ == '__main__':
     app.run

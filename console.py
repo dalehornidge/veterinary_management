@@ -34,5 +34,5 @@ pet_repository.save(pet2)
 # print(pet_repository.select_all())
 # print(vet_repository.select_all())
 
-owner_repository.select(owner1.id)
-pdb.set_trace()
+# owner_repository.select(owner1.id)
+# pdb.set_trace()

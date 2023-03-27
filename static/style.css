@@ -19,18 +19,25 @@ body {
 #nav_menu {
     display: flex;
     justify-content: space-between;
+    color: #638c9e;
+}
+
+#nav_menu a {
+    text-decoration: none;
+    color: #638c9e;
 }
 
 li {
     list-style: none;
-    padding: 0 5px;   
+    padding: 0 15px;
+    text-decoration: none;   
 }
 
 .flex-container {
     display: flex;
     /* flex: 1; */
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 .flex-child-1 {
@@ -58,13 +65,14 @@ li {
     padding: 5%;
 } */
 
-#vet-name, .vet-namec {
+#vet-name {
     background: #EAC7C7;
     padding: 10px;
     border-radius: 25px;
     color: white;
     margin: 10px ;
     width: 50%;
+    text-align: center;
 }
 
 .choose-vet {
@@ -74,6 +82,8 @@ li {
     color: white;
     margin: 10px ;
     width: 50%;
+    text-align: center;
+    
 }
 /* .vet-namec { 
     background: #EAC7C7;

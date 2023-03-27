@@ -2,14 +2,14 @@
 
 {% block content  %}
 
-<img class="flex-child-1" src="static/img/cat.jpg" alt="image of a cat" width=500px>
+<img class="flex-child-1" src="static/img/dogs.jpg" alt="image of a cat" width=500px>
 <div class = "flex-child-2">
 <section class="choose-vet">Select a vet</section>
 <section id="vets">
     
-{% for pet in pets  %}
+{% for vet in vets  %}
 
-<section id="vet-name"> {{pet.name}} </section>
+<section id="vet-name"> {{vet.name}} </section>
 
 {% endfor %}
 

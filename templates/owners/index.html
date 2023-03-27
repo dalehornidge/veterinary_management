@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>Hello All Owners</p>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content  %}
+
+<img class="flex-child-1" src="static/img/owner.jpg" alt="image of a dog being held by their human" width=500px>
+<div class = "flex-child-2">
+<section class="choose-vet">Select an owner</section>
+<section id="vets">
+    
+{% for owner in owners  %}
+
+<section id="vet-name"> {{owner.name}} </section>
+
+{% endfor %}
+
+{% endblock  %}

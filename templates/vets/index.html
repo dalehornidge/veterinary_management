@@ -9,8 +9,12 @@
     
 {% for vet in vets  %}
 
-<section id="vet-name"> {{vet.name}} </section>
-
+<a href="/vets/{{ vet.id }}">
+<section class="options options-link"> {{vet.name}} </section>
+</a>
 {% endfor %}
+
+<section class="choose-vet">Add a vet</section>
+<section class="choose-vet">Delete a vet</section>
 
 {% endblock  %}

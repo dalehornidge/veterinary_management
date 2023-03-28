@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>Hello Vet</p>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content  %}
+
+<img class="flex-child-1" src="/static/img/cat.jpg" alt="image of a cat" width=500px>
+<div class = "flex-child-2">
+<section class="choose-vet">Dr {{ vets.name }}</section>
+<section id="vets">
+<section class="options"> Phone: {{ vets.phone }} </section>
+<a href="mailto:{{vets.email}}"><section class="options options-link"> {{ vets.email }} </section></a>
+
+<section class="options"> View animals cared for </section>
+
+{% endblock  %}

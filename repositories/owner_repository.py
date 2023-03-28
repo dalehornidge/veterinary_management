@@ -20,15 +20,16 @@ def save(owner):
     owner.id = id
     return owner
 
-def select_all():
-    vets = []
-    sql = "SELECT * FROM vets"
-    results = run_sql(sql)
+# ERROR Working on Pets/Vets first
+# def select_all():
+#     owners = []
+#     sql = "SELECT * FROM vets"
+#     results = run_sql(sql)
 
-    for result in results:
-        vet = Vet(result["name"], result["email"], result["phone"], result["id"])
-        vets.append(vet)
-    return vets
+#     for result in results:
+#         owner = Owner(result["name"], result["address"], result["phone"], result["owner_notes"], result["id"])
+#         owners.append(owner)
+#     return owners
 
 
 

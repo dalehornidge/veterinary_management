@@ -17,5 +17,5 @@ def owners():
 # Show by ID
 @owners_blueprint.route("/owners/<id>")
 def show_owners(id):
-    owners = owner_repository.select(id)
-    return render_template("/owners/show.html", owners=owners)
+    owner = owner_repository.select(id)
+    return render_template("/owners/show.html", owner=owner)

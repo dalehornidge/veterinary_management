@@ -36,6 +36,6 @@ def select(id):
     results = run_sql(sql, values)
     if results:
         result = results[0]
-        vet = Vet(result["name"], result["email"], result["phone"], result["id"])
+        vet = Vet(result['name'], result['email'], result['phone'], result['id'])
     return vet
 

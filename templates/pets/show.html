@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 
 {% block content  %}
-    
-<p>Hello there</p>
+
+<img class="flex-child-1" src="/static/img/cat.jpg" alt="image of a cat" width=500px>
+<div class = "flex-child-2">
+<section class="choose-vet">{{ pets.name }}</section>
+<section id="vets">
+
+    <section id="vet-name"> Species: {{ pets.type }} </section>
+    <section id="vet-name"> Date of Birth: {{ pets.dob }} </section>
+    <section id="vet-name"> Owned by: {{ pets.owner_id }} </section>
+    <section id="vet-name"> Cared for by: {{ pets.vet_id }} </section>
+    <section id="vet-name"> Treatment Notes: {{ pets.treatment_notes }} </section>
 
 {% endblock  %}
+

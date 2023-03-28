@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+<img class="flex-child-1" src="/static/img/cat.jpg" alt="image of a cat" width=500px>
+<div class = "flex-child-2">
+<section class="choose-vet">Add a new vet</section>
+
+<form class="option" action="/vets/new" method="POST">
+
+    <label class="option" for="name"></label>
+    <input type="text" id="name" name="name" placeholder="Name" required>
+
+    <label for="email"></label>
+    <input type="text" id="email" name="email" placeholder="Email Address" required>
+
+    <label for="phone"></label>
+    <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
+
+    <button class="post-button" type="submit">Add</button>
+
+</form>
+</div>
+
+{% endblock %}
+

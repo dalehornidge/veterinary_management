@@ -23,12 +23,18 @@ def show_vets(id):
 def new_vet():
     return render_template ("vets/new.html")
 
-# # Create
-# @vets_blueprint.route("/vets", methods=["POST"])
-# def create_vet():
-#     name 
-
 @vets_blueprint.route("/vets/<id>/delete", methods=["POST"])
 def delete_vet(id):
     vet_repository.delete(id)
     return redirect ("/vets")
+
+@vets_blueprint.route("/vets/new", methods=["POST"])
+def create_vet():
+    name = request.form["name"]
+    email = request.form["email"]
+    phone = request.form["phone"]
+    new_vet = Vet(name, email, phone)
+    vet_repository.save(new_vet)
+    return redirect("/vets")
+
+

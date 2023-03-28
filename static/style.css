@@ -13,6 +13,34 @@ a {
     text-decoration: none;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+form button {
+    display: block;
+}
+
+form input,
+form textarea {
+    display: block;
+    background: #EAC7C7;
+    border-style: none;
+    padding: 15px;
+    margin: 10px ;
+    border-radius: 25px;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 800;
+}  
+
 #title_bar {
     background: #C6DCE4;
     display: flex;
@@ -49,39 +77,37 @@ li {
 
 .flex-child-1 {
     flex: 1;
-    margin-right: 20px;
+    margin-left: 5%;
     min-width: 0;
     max-width: 50%;
+    display: flex;
+    object-fit: contain;
+    object-position: top center;
 }
+
 
 .flex-child-2 {
     flex: 1;
-    margin-left: 20px;
-    margin-top: 100px;
-    min-width: 0;
-    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    width: 50%;
+    margin-left: -10%;
+    margin-right: 10%;
+    height: 95vh; 
     padding-bottom: 20px;
-    
 }
 
-/* #select-option {
-    background: #A0C3D2;
-    min-width: 200%;
-    border-radius: 25px;
-    color: white;
-    padding: 5%;
-} */
-
 .options {
-    background: #EAC7C7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
     padding: 10px;
-    margin: 10px ;
-    margin-left: 50px;
+    background-color: #EAC7C7;
     border-radius: 25px;
     color: white;
-   
-    width: 40%;
     text-align: center;
     font-size: 1.5rem;
     font-weight: 800;
@@ -92,60 +118,65 @@ li {
 }
 
 .choose-vet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: #A0C3D2;
     padding: 15px;
     border-radius: 25px;
     color: white;
     margin: 10px ;
+    margin-bottom: 20px;
     width: 50%;
     text-align: center;
     font-size: 2rem;
     font-weight: 800;
-    
 }
 
+
 .additional-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: #A0C3D2;
     padding: 5px;
     border-radius: 25px;
     color: white;
     margin: 10px ;
-    width: 30%;
     text-align: center;
     font-size: rem;
     font-weight: 600;
-    
 }
 
 .additional-option:hover {
     background: #FFE6E6;
-}
+} 
 
 .post-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-decoration: none;
-  display:flex;
   background: #A0C3D2;
   color: white;
   text-align: center;
   font-size: rem;
   font-weight: 600;
   border: none;
-  padding: 5px;
+  padding: 15px;
   border-radius: 25px;
   margin: 10px ;
-  width: 30%;
   
 }
 
 .post-button:hover {
     background: #FFE6E6;
-}
+} 
 
-/* .vet-namec { 
-    background: #EAC7C7;
-    padding: 10px;
-    border-radius: 25px;
-    color: white;
-    margin: 10px ;
-    width: 50%;
-} */
+img {
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: top center;
+}

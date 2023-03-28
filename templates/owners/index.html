@@ -9,8 +9,11 @@
     
 {% for owner in owners  %}
 
-<section id="vet-name"> {{owner.name}} </section>
-
+<a href="/owners/{{ owner.id }}">
+<section class="options options-link"> {{owner.name}} </section>
+</a>
 {% endfor %}
+
+<a href="/owners/new"><section class="additional-option">Add a new owner</section></a>    
 
 {% endblock  %}

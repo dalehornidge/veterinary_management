@@ -32,6 +32,15 @@ def save(owner):
 #     return owners
 
 
+def select_all():
+    owners = []
+    sql = "SELECT * FROM owners"
+    results = run_sql(sql)
+
+    for result in results:
+        owner = Owner(result["name"], result["address"], result["phone"], result["owner_notes"], result["id"])
+        owners.append(owner)
+    return owners
 
 
 # def select_all():

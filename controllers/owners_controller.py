@@ -19,3 +19,9 @@ def owners():
 def show_owners(id):
     owner = owner_repository.select(id)
     return render_template("/owners/show.html", owner=owner)
+
+
+@owners_blueprint.route("/owners/<id>/delete", methods=["POST"])
+def delete_owner(id):
+    owner_repository.delete(id)
+    return redirect ("/owners")

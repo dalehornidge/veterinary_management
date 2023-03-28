@@ -4,9 +4,14 @@
 
 <img class="flex-child-1" src="/static/img/owner.jpg" alt="image of a dog being held by their human" width=500px>
 <div class = "flex-child-2">
-<section class="choose-vet">Select an owner</section>
+<section class="choose-vet">{{ owner.name }}</section>
 <section id="vets">
 
-<section id="vet-name"> {{ owner.name }} </section>
+<section class="options">Phone: {{ owner.phone }} </section>
+<section class="options">Address: {{ owner.address }} </section>
+<section class="options">Notes: {{ owner.owner_notes }} </section>
+
+<form action="/owners/{{ owner.id }}/delete" method="POST">
+<input type="submit" value="Delete owner" class="post-button">  
 
 {% endblock  %}

@@ -11,4 +11,7 @@
 
 <section class="options"> View animals cared for </section>
 
+<form action="/vets/{{ vets.id }}/delete" method="POST">
+    <input type="submit" value="Delete" class="post-button">
+
 {% endblock  %}

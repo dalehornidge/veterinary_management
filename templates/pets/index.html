@@ -9,8 +9,11 @@
     
 {% for pet in pets  %}
 
-<section id="vet-name"> {{pet.name}} </section>
-
+<a href="/pets/{{ pet.id }}">
+<section class="options options-link"> {{pet.name}} </section>
+</a>
 {% endfor %}
+
+<a href="/pets/new"><section class="additional-option">Add a new pet</section></a>    
 
 {% endblock  %}

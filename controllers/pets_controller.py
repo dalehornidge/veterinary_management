@@ -18,5 +18,10 @@ def pets():
 # Show by ID
 @pets_blueprint.route("/pets/<id>")
 def show_pets(id):
-    pets = pet_repository.select(id)
+    pet = pet_repository.select(id)
     return render_template("pets/show.html", pets=pets)
+
+@pets_blueprint.route("/pets/<id>/delete", methods=["POST"])
+def delete_pet(id):
+    pet_repository.delete(id)
+    return redirect ("/pets")

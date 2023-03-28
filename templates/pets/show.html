@@ -7,11 +7,15 @@
 <section class="choose-vet">{{ pets.name }}</section>
 <section id="vets">
 
-    <section id="vet-name"> Species: {{ pets.type }} </section>
-    <section id="vet-name"> Date of Birth: {{ pets.dob }} </section>
-    <section id="vet-name"> Owned by: {{ pets.owner_id }} </section>
-    <section id="vet-name"> Cared for by: {{ pets.vet_id }} </section>
-    <section id="vet-name"> Treatment Notes: {{ pets.treatment_notes }} </section>
+    <section class="options"> Species: {{ pets.type }} </section>
+    <section class="options"> Date of Birth: {{ pets.dob }} </section>
+    <section class="options"> Owned by: {{ pets.owner_id }} </section>
+    <section class="options"> Cared for by: {{ pets.vet_id }} </section>
+    <section class="options"> Treatment Notes: {{ pets.treatment_notes }} </section>
+
+<form action="/pets/{{ pets.id }}/delete" method="POST">
+ <input type="submit" value="Remove from care" class="post-button">  
+
 
 {% endblock  %}
 

@@ -20,6 +20,7 @@ form {
     margin-bottom: 20px;
     padding: 10px;
     border-radius: 5px;
+    color: white;
 }
 
 
@@ -39,7 +40,29 @@ form textarea {
     text-align: center;
     font-size: 1rem;
     font-weight: 800;
-}  
+} 
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    display: block;
+    background: #EAC7C7;
+    background-color: #EAC7C7;
+    border-style: none;
+    padding: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: 10px ;
+    border-radius: 25px;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 800;
+    width: auto;
+} 
+
 
 #title_bar {
     background: #C6DCE4;

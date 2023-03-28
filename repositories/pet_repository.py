@@ -3,6 +3,8 @@ from models.pet import Pet
 from models.owner import Owner
 from models.vet import Vet
 
+import repositories.vet_repository as vet_repository
+import repositories.owner_repository as owner_repository
 
 def delete_all():
     sql = "DELETE FROM pets"
@@ -39,7 +41,9 @@ def select(id):
     results = run_sql(sql, values)
     if results:
         result = results[0]
-        pet = Pet(result["name"], result["dob"], result["type"], result["treatment_notes"], result["owner_id"], result["vet_id"], result["id"])
+        owner = owner_repository.select(result["owner_id"])
+        vet = vet_repository.select(result["vet_id"])
+        pet = Pet(result["name"], result["dob"], result["type"], result["treatment_notes"], owner, vet, result["id"])
     return pet
 
 

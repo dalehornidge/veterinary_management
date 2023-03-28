@@ -1,5 +1,6 @@
 from db.run_sql import run_sql
 from models.vet import Vet
+from models.pet import Pet
 
 
 def delete_all():
@@ -39,3 +40,12 @@ def select(id):
         vet = Vet(result['name'], result['email'], result['phone'], result['id'])
     return vet
 
+def show_all(id):
+    pet = None
+    sql = "SELECT * FROM pets WHERE vet_id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if results:
+        result = results[0]
+        pet = Pet(result["name"], result["dob"], result["type"], result["treatment_notes"], result["owner_id"], result["vet_id"], result["id"])
+    return pet

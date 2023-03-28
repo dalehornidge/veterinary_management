@@ -20,18 +20,6 @@ def save(owner):
     owner.id = id
     return owner
 
-# ERROR Working on Pets/Vets first
-# def select_all():
-#     owners = []
-#     sql = "SELECT * FROM vets"
-#     results = run_sql(sql)
-
-#     for result in results:
-#         owner = Owner(result["name"], result["address"], result["phone"], result["owner_notes"], result["id"])
-#         owners.append(owner)
-#     return owners
-
-
 def select_all():
     owners = []
     sql = "SELECT * FROM owners"
@@ -42,16 +30,6 @@ def select_all():
         owners.append(owner)
     return owners
 
-
-# def select_all():
-#     owners = []
-#     sql = "SELECT * FROM owners"
-#     results = run_sql(sql)
-
-#     for result in results:
-#         owner = Owner(result["name"], result["address"], result["phone"], result["owner_notes"], result["id"])
-#         owners.append(owner)
-#     return owners
 
 def select(id):
     owner = None

@@ -8,7 +8,7 @@ import repositories.vet_repository as vet_repository
 import repositories.owner_repository as owner_repository
 import repositories.pet_repository as pet_repository
 
-owner_repository.delete_all()
+# owner_repository.delete_all()
 vet_repository.delete_all()
 pet_repository.delete_all()
 

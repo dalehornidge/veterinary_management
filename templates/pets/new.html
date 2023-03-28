@@ -20,12 +20,30 @@
     <label for="treatment_notes"></label>
     <input type="text" id="treatment_notes" name="treatment_notes" placeholder="Treatment Notes" required>
 
+    <!-- <label for="owner_id"></label>
+    <input type="text" id="owner_id" name="owner_id" placeholder="Owner" required> -->
+<div class="dropdown">
     <label for="owner_id"></label>
-    <input type="text" id="owner_id" name="owner_id" placeholder="Owner" required>
-
+    <select name="owner_id" id="owner_id" placeholder="Owner">
+        {% for owner in owners: %}
+        {% if loop.first %}
+        <option value="" disabled selected>Select Owner</option>
+      {% endif %}
+        <option value="{{ owner.id }}">{{ owner.name }}</option>
+        {% endfor %}
+    </select>
+</div>
+    <div class="dropdown">
     <label for="vet_id"></label>
-    <input type="text" id="vet_id" name="vet_id" placeholder="Vet assigned to" required>
-
+    <select name="vet_id" id="vet_id" placeholder="Vet">
+        {% for vet in vets: %}
+        {% if loop.first %}
+        <option value="" disabled selected>Assign Vet</option>
+      {% endif %}
+        <option value="{{ vet.id }}">{{ vet.name }}</option>
+        {% endfor %}
+    </select>
+</div>
     <button class="post-button" type="submit">Add</button>
 
 </form>

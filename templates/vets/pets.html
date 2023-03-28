@@ -2,9 +2,9 @@
 
 {% block content  %}
 
-<img class="flex-child-1" src="static/img/cat.jpg" alt="image of a cat" width=500px>
+<img class="flex-child-1" src="/static/img/cat.jpg" alt="image of a cat" width=500px>
 <div class = "flex-child-2">
-<section class="choose-vet">Select a pet</section>
+<section class="choose-vet">{{ vet.name }} cares for:</section>
 <section id="vets">
     
 {% for pet in pets  %}

@@ -29,3 +29,6 @@ CREATE TABLE pets (
 );
 
 -- ALTER TABLE owners ADD CONSTRAINT fk_owners_pets FOREIGN KEY (pet_id) REFERENCES pets(id) ON DELETE CASCADE;
+
+INSERT INTO owners (name, address, phone, owner_notes)
+VALUES ('Unassigned Owner', 'Vet Practice', '0130115102', 'This animal has no owner assigned');

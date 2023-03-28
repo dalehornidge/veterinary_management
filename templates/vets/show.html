@@ -9,7 +9,7 @@
 <section class="options"> Phone: {{ vets.phone }} </section>
 <a href="mailto:{{vets.email}}"><section class="options options-link"> {{ vets.email }} </section></a>
 
-<section class="options"> View animals cared for </section>
+<a href="/vets/{{vets.id}}/pets"><section class="options options-link"> View animals cared for </section></a>
 
 <form action="/vets/{{ vets.id }}/delete" method="POST">
     <input type="submit" value="Delete" class="post-button">

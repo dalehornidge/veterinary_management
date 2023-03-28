@@ -25,3 +25,19 @@ def show_owners(id):
 def delete_owner(id):
     owner_repository.delete(id)
     return redirect ("/owners")
+
+@owners_blueprint.route("/owners/new")
+def new_owner():
+    return render_template ("owners/new.html")
+
+@owners_blueprint.route("/owners/new", methods=["POST"])
+def create_owner():
+    name = request.form["name"]
+    address = request.form["address"]
+    phone = request.form["phone"]
+    owner_notes = request.form["owner_notes"]
+    new_owner = Owner(name, address, phone, owner_notes)
+    owner_repository.save(new_owner)
+    return redirect("/owners")
+
+

@@ -37,4 +37,13 @@ def create_vet():
     vet_repository.save(new_vet)
     return redirect("/vets")
 
+@vets_blueprint.route("/vets/<id>/pets")
+def show_pets(id):
+    vet = vet_repository.select(id)
+    pet = vet_repository.show_all(id)
+    return render_template("vets/pets.html", pet=pet, vet=vet)
+
+
+
+
 

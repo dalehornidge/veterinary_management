@@ -9,8 +9,8 @@
 
     <section class="options"> Species: {{ pets.type }} </section>
     <section class="options"> Date of Birth: {{ pets.dob }} </section>
-    <section class="options"> Owned by: {{ pets.owner_id }} </section>
-    <section class="options"> Cared for by: {{ pets.vet_id }} </section>
+    <section class="options"> Owned by: {{ pets.owner_id.name }} </section>
+    <section class="options"> Cared for by: {{ pets.vet_id.name }} </section>
     <section class="options"> Treatment Notes: {{ pets.treatment_notes }} </section>
 
 <form action="/pets/{{ pets.id }}/delete" method="POST">

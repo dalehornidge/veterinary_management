@@ -42,6 +42,8 @@ def select(id):
         owner = Owner(result["name"], result["address"], result["phone"], result["owner_notes"], result["id"])
     return owner
 
+
+# copied from vet_repo
 def show_all(id):
     pets = []
     sql = "SELECT * FROM pets WHERE vet_id = %s"

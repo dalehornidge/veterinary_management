@@ -43,12 +43,18 @@ def show_pets(id):
     pets = vet_repository.show_all(id)
     return render_template("vets/pets.html", pets=pets, vet=vet)
 
+@vets_blueprint.route("/vets/<id>/edit", methods=["GET"])
+def update_vet_get(id):
+    vet = vet_repository.select(id)
+    return render_template("/vets/edit.html", vet=vet)
+
+
 @vets_blueprint.route("/vets/<id>", methods=["POST"])
 def update_vet(id):
     name = request.form["name"]
     email = request.form["email"]
     phone = request.form["phone"]
-    vet = Vet(name, email, phone)
+    vet = Vet(name, email, phone, id)
     vet_repository.update(vet)
     return redirect("/vets")
 

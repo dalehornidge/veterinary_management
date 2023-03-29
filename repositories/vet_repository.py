@@ -53,7 +53,7 @@ def show_all(id):
     return pets
 
 def update(vet):
-    sql = "UPDATE vets SET (name, email, phone) =%s, %s, %s WHERE id = %s"
+    sql = "UPDATE vets SET (name, email, phone) = (%s, %s, %s) WHERE id = %s"
     values = [vet.name, vet.email, vet.phone, vet.id]
     run_sql(sql, values)
 

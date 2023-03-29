@@ -1,4 +1,6 @@
+import pdb
 from db.run_sql import run_sql
+
 from models.pet import Pet
 from models.owner import Owner
 from models.vet import Vet
@@ -46,4 +48,7 @@ def select(id):
         pet = Pet(result["name"], result["dob"], result["type"], result["treatment_notes"], owner, vet, result["id"])
     return pet
 
-
+def update(pet):
+    sql = "UPDATE pets SET (name, dob, type, treatment_notes, owner_id, vet_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [pet.name, pet.dob, pet.type, pet.treatment_notes, pet.owner_id, pet.vet_id, pet.id]
+    run_sql(sql, values)

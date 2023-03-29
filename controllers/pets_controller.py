@@ -1,5 +1,5 @@
 from flask import Blueprint, Flask, redirect, render_template, request
-
+import pdb
 from models.pet import Pet
 from models.vet import Vet
 from models.owner import Owner
@@ -46,26 +46,26 @@ def create_pet():
     pet_repository.save(new_pet)
     return redirect("/pets")
 
-# @pets_blueprint.route("/pets/new", methods=["POST"])
-# def create_pet():
-#     name = request.form["name"]
-#     dob = request.form["dob"]
-#     type = request.form["type"]
-#     owner_id = request.form["owner_id"]
-#     vet_id = request.form["vet_id"]
-#     treatment_notes = request.form["treatment_notes"]
-
-#     vet = vet_repository.select(vet_id)
-#     owner = owner_repository.select(owner_id)
-#     vets = vet_repository.select_all()
-
-#     new_pet = Pet(name, dob, type, treatment_notes, owner, vet)
+@pets_blueprint.route("/pets/<id>/edit", methods=["GET"])
+def update_pet_get(id):
+    pet = pet_repository.select(id)
+    vets = vet_repository.select_all()
+    owners = owner_repository.select_all()
+    return render_template("/pets/edit.html", pet=pet, vets=vets, owners=owners)
 
 
-#     new_pet.vet_id = vet_id
-#     new_pet.owner_id = owner_id
-
-#     pet_repository.save(new_pet)
-#     return redirect("/pets")
-
+@pets_blueprint.route("/pets/<id>/update", methods=["POST"])
+def update_pet(id):
+    name = request.form["name"]
+    dob = request.form["dob"]
+    type = request.form["type"]
+    treatment_notes = request.form["treatment_notes"]
+    owner_id = request.form["owner_id"]
+    vet_id = request.form["vet_id"]
+    owner = owner_repository.select(owner_id)
+    vet = vet_repository.select(vet_id)
+    pet = Pet(name, dob, type, treatment_notes, owner_id, vet_id, id)
+    pet_repository.update(pet)
+    pdb.set_trace
+    return redirect("/pets")
 

@@ -40,9 +40,8 @@ def create_owner():
     owner_repository.save(new_owner)
     return redirect("/owners")
 
-
 @owners_blueprint.route("/owners/<id>/pets")
 def show_pets(id):
     owner = owner_repository.select(id)
-    pet = vet_repository.show_all(id)
-    return render_template("owners/pets.html", pet=pet, owner=owner)
+    pets = vet_repository.show_all(id)
+    return render_template("owners/pets.html", pets=pets, owner=owner)

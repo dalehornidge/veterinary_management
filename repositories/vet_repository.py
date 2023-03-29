@@ -47,9 +47,10 @@ def show_all(id):
     results = run_sql(sql, values)
     for result in results:
         if results:
-            result = results[0]
+            # result = results[0]
             pet = Pet(result["name"], result["dob"], result["type"], result["treatment_notes"], result["owner_id"], result["vet_id"], result["id"])
             pets.append(pet)
+            print(pets)
     return pets
 
 def update(vet):

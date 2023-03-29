@@ -51,3 +51,11 @@ def show_all(id):
             pet = Pet(result["name"], result["dob"], result["type"], result["treatment_notes"], result["owner_id"], result["vet_id"], result["id"])
             pets.append(pet)
     return pets
+
+def update(vet):
+    sql = "UPDATE vets SET (name, email, phone) =%s, %s, %s WHERE id = %s"
+    values = [vet.name, vet.email, vet.phone, vet.id]
+    run_sql(sql, values)
+
+
+    

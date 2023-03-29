@@ -11,7 +11,20 @@
 
 <a href="/vets/{{vets.id}}/pets"><section class="options options-link"> View animals cared for </section></a>
 
+
+
+
+
+
+<div class="lower-buttons">
 <form action="/vets/{{ vets.id }}/delete" method="POST">
-    <input type="submit" value="Delete" class="post-button">
+    <input type="submit" value="Delete" class="post-button lower-button1">
+</form> 
+
+<form action="/vets/{{ vets.id }}/edit" method="GET">
+    <input type="submit" value="Edit Vet" class="post-button lower-button2">  
+</form>
+</div>
 
 {% endblock  %}
+

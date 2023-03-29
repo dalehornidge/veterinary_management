@@ -42,8 +42,6 @@ def select(id):
         owner = Owner(result["name"], result["address"], result["phone"], result["owner_notes"], result["id"])
     return owner
 
-
-# copied from vet_repo
 def show_all(id):
     pets = []
     sql = "SELECT * FROM pets WHERE vet_id = %s"
@@ -56,3 +54,7 @@ def show_all(id):
             pets.append(pet)
     return pets
 
+def update(owner):
+    sql = "UPDATE owners SET (name, address, phone, owner_notes) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [owner.name, owner.address, owner.phone, owner.owner_notes, owner.id]
+    run_sql(sql, values)

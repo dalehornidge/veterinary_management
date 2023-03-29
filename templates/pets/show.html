@@ -12,10 +12,13 @@
     <a href="/owners/{{pets.owner_id.id}}"><section class="options"> Owned by: {{ pets.owner_id.name }} </section></a>
     <a href="/vets/{{pets.vet_id.id}}"> <section class="options"> Cared for by: {{ pets.vet_id.name }} </section></a>
     <section class="options"> Treatment Notes: {{ pets.treatment_notes }} </section>
-
+<div class="lower-buttons">
 <form action="/pets/{{ pets.id }}/delete" method="POST">
- <input type="submit" value="Remove from care" class="post-button">  
-
-
+ <input type="submit" value="Remove from care" class="post-button lower-button1">  
+</form>
+ <form action="/pets/{{ pets.id }}/edit" method="GET">
+    <input type="submit" value="Edit Pet" class="post-button lower-button2">  
+</form>
+</div>
 {% endblock  %}
 

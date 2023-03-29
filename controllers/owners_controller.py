@@ -45,3 +45,21 @@ def show_pets(id):
     owner = owner_repository.select(id)
     pets = vet_repository.show_all(id)
     return render_template("owners/pets.html", pets=pets, owner=owner)
+
+
+@owners_blueprint.route("/owners/<id>/edit", methods=["GET"])
+def update_owner_get(id):
+    owner = owner_repository.select(id)
+    return render_template("/owners/edit.html", owner=owner)
+
+
+
+@owners_blueprint.route("/owners/<id>", methods=["POST"])
+def update_owner(id):
+    name = request.form["name"]
+    address = request.form["address"]
+    phone = request.form["phone"]
+    owner_notes = request.form["owner_notes"]
+    owner = Owner(name, address, phone, owner_notes, id)
+    owner_repository.update(owner)
+    return redirect("/owners")

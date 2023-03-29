@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+<img class="flex-child-1" src="/static/img/cat.jpg" alt="image of a cat" width=500px>
+<div class = "flex-child-2">
+<section class="choose-vet">Edit: {{owner.name}}</section>
+
+<form class="option" action="/owners/{{owner.id}}" method="POST">
+
+    <label class="option" for="name"></label>
+    <input type="text" id="name" name="name" placeholder="{{owner.name}}" required>
+
+    <label for="address"></label>
+    <input type="text" id="address" name="address" placeholder="{{owner.address}}" required>
+
+    <label for="phone"></label>
+    <input type="text" id="phone" name="phone" placeholder="{{owner.phone}}" required>
+
+    <label for="owner_notes"></label>
+    <input type="text" id="owner_notes" name="owner_notes" placeholder="{{owner.owner_notes}}" required>
+
+    <button class="post-button" type="submit">Update</button>
+
+</form>
+</div>
+
+{% endblock %}
+
+<form class="option" action="/owners/{{owner.id}}" method="POST">
+
+    <label class="option" for="name"></label>
+    <input type="text" id="name" name="name" placeholder="{{owner.name}}" required>
+
+    <label for="address"></label>
+    <input type="text" id="address" name="address" placeholder="{{owner.address}}" required>
+
+    <label for="phone"></label>
+    <input type="text" id="phone" name="phone" placeholder="{{owner.phone}}" required>
+
+    <label for="owner_notes"></label>
+    <input type="text" id="owner_notes" name="owner_notes" placeholder="{{owner.owner_notes}}" required>
+
+    <button class="post-button" type="submit">Update</button>
+
+</form>

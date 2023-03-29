@@ -10,6 +10,8 @@
 <section class="options">Phone: {{ owner.phone }} </section>
 <section class="options">Address: {{ owner.address }} </section>
 <section class="options">Notes: {{ owner.owner_notes }} </section>
+<a href="/owners/{{owner.id}}/pets"><section class="options options-link"> View animals cared for </section></a>
+
 
 <form action="/owners/{{ owner.id }}/delete" method="POST">
 <input type="submit" value="Delete owner" class="post-button">  

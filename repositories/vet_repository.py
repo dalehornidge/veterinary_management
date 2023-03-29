@@ -1,7 +1,7 @@
 from db.run_sql import run_sql
 from models.vet import Vet
 from models.pet import Pet
-
+import pdb;
 
 def delete_all():
     sql = "DELETE FROM vets"
@@ -41,11 +41,13 @@ def select(id):
     return vet
 
 def show_all(id):
-    pet = None
+    pets = []
     sql = "SELECT * FROM pets WHERE vet_id = %s"
     values = [id]
     results = run_sql(sql, values)
-    if results:
-        result = results[0]
-        pet = Pet(result["name"], result["dob"], result["type"], result["treatment_notes"], result["owner_id"], result["vet_id"], result["id"])
-    return pet
+    for result in results:
+        if results:
+            result = results[0]
+            pet = Pet(result["name"], result["dob"], result["type"], result["treatment_notes"], result["owner_id"], result["vet_id"], result["id"])
+            pets.append(pet)
+    return pets

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content  %}
+
+<img class="flex-child-1" src="/static/img/owner.jpg" alt="image of a dog and their human" width=500px>
+<div class = "flex-child-2">
+<section class="choose-vet">{{ owner.name }} cares for:</section>
+<section id="vets">
+    
+{% for pet in pets  %}
+
+<a href="/pets/{{ pet.id }}">
+<section class="options options-link"> {{pet.name}} </section>
+</a>
+{% endfor %}
+
+<a href="/pets/new"><section class="additional-option">Add a new pet</section></a>    
+
+{% endblock  %}

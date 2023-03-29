@@ -40,8 +40,8 @@ def create_vet():
 @vets_blueprint.route("/vets/<id>/pets")
 def show_pets(id):
     vet = vet_repository.select(id)
-    pet = vet_repository.show_all(id)
-    return render_template("vets/pets.html", pet=pet, vet=vet)
+    pets = vet_repository.show_all(id)
+    return render_template("vets/pets.html", pets=pets, vet=vet)
 
 
 

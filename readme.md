@@ -4,6 +4,10 @@
 
 This web application is designed to help veterinary practices manage their pet clientele in a more efficient and streamlined manner. It was built using Python, Flask, HTML, and CSS, along with the pyscopg2 and PostgreSQL libraries to manage the SQL database.
 
+<img width="1420" alt="Screenshot 2023-08-07 at 11 40 16" src="https://github.com/dalehornidge/veterinary_management/assets/124175762/56719e67-fabf-4a6f-8999-4178fd03323c">
+
+<img width="1422" alt="Screenshot 2023-08-07 at 11 40 48" src="https://github.com/dalehornidge/veterinary_management/assets/124175762/8e8405aa-09e7-4ac5-a8d2-7832ff493d2d">
+
 ## 🚀 Features
 
 Here's what you can expect from my Veterinary Management App:
